@@ -206,11 +206,11 @@ int main() {
     map.createDungeon(80, 25, 50);
     // create hero and set him/her up
     GameCharacter* hero;
-    bool useKnight = true;
+    bool useKnight = false;
     // TODO create a Knight or a Wizard hero depending on useKnight
     if(useKnight)
         hero = new Knight("Jaime", 16, true);
-    // find a legal start position
+        // find a legal start position
     else
         hero = new Wizard("Ganjalf", 15);
     int startX = 0;
@@ -220,17 +220,17 @@ int main() {
     hero->setPosY(startY);
     // create a weapon and give it to hero
     bool useSword = true;
-    Weapon* sword;
+    Weapon* firstWeapon;
     // TODO create a Sword or a Bow, depending on useSword
     if(useSword)
-        sword = new Sword(8);
+        firstWeapon = new Sword(8);
     else
-        sword = new Bow();
-    hero->setWeapon(sword);
+        firstWeapon = new Bow();
+    hero->setWeapon(firstWeapon);
     // create an enemy (an Orc or a Skeleton)
     GameCharacter* enemy;
     // TODO create an orc
-    bool useOrc = true;
+    bool useOrc = false;
     if(useOrc)
         enemy = new Orc(12);
     else
